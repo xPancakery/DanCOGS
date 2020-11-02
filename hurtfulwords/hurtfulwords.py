@@ -19,6 +19,6 @@ class hurtfulwords(commands.Cog):
                 everyone=False, users=False, roles=False),
         )
         
-    @staticmethod
+    
     def big_insults(self):
         return insult_out
