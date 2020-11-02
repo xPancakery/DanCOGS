@@ -23,4 +23,4 @@ class hurtfulwords(commands.Cog):
             )
 
     def big_insults(x):
-        return insult_out
+        print(insult_out)
