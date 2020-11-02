@@ -96,6 +96,7 @@ class bullybot(commands.Cog):
     insult_string = ''.join(insults_list)
     remove_html = 'http://www.insult.wiki/insult/'
     result = insult_string.replace(remove_html,' ')
+    final_list = []
 
         # Large letter command
 
