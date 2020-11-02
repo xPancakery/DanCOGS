@@ -17,11 +17,11 @@ class hurtfulwords(commands.Cog):
         else:
             await type_message(
                 ctx.channel,
-                self.big_insults(self, ctx),
+                self.big_insults(ctx),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
             )
             
-    def big_insults(ctx):
+    def big_insults(self, ctx):
         # Pick and print insult from insult_list
         return ("{} **IS A BIG**".format(ctx.message.author.mention)) + big_letters(final(final_list))
