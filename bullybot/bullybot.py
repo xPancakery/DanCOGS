@@ -122,7 +122,7 @@ def final(self):
     return random.choice(final_list)
 
         # insult_list is the random insult big letter generator
-insult_list = big_letters(final)
+insult_list = big_letters(final(None))
         
 # Ideas for bully modules
 # Replace spaces with the poop emojii and reverse word order in all caps (added for now)
