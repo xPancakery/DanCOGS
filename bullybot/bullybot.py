@@ -57,7 +57,7 @@ class bullybot(commands.Cog):
         else:
             pass
     
-    letters = {         
+letters = {         
     'a':['  *  ',' * * ','*****','*   *','*   *'],
     'b':['**** ','*   *','*****','*   *','**** '],
     'c':[' ****','*    ','*    ','*    ',' ****'],
@@ -89,17 +89,17 @@ class bullybot(commands.Cog):
     '|':['*****','*****','*****','*****','*****'],
     ' ':['','','','','']
     }
-
-    html = requests.get('http://www.insult.wiki/list-of-insults')
-    doc = lxml.html.fromstring(html.content)
-    insults_list = doc.xpath('//html/body/ol/li/a/@href')
-    insult_string = ''.join(insults_list)
-    remove_html = 'http://www.insult.wiki/insult/'
-    result = insult_string.replace(remove_html,' ')
+    
+html = requests.get('http://www.insult.wiki/list-of-insults')
+doc = lxml.html.fromstring(html.content)
+insults_list = doc.xpath('//html/body/ol/li/a/@href')
+insult_string = ''.join(insults_list)
+remove_html = 'http://www.insult.wiki/insult/'
+result = insult_string.replace(remove_html,' ')
 
         # Large letter command
 
-    def big_letters(insult):
+    def big_letters(self, insult):
             # Embed the letters in code block for discord
         print('```py')
             # Print large format letters horizontally
@@ -110,8 +110,9 @@ class bullybot(commands.Cog):
             #finish the code block
         print('```')
         
-        # Dictionary to call large format letters
-    def final(x):
+    # Dictionary to call large format letters
+    final_list = []
+    def final(self, x):
         final_list = []
         for word in result.split(' '):
             if len(word) <= 12:
