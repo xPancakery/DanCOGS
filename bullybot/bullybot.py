@@ -15,8 +15,8 @@ seed(1)
 class bullybot(commands.Cog):
     #The premiere method of bullying your friends over discord. With a ROBOT. How absurd.
 
-    @commands.command(aliases=["k"])
-    async def bullyy(self, ctx: commands.Context):
+    @commands.command(aliases=["b"])
+    async def bully(self, ctx: commands.Context):
         #Define the command for RedBot
         message = (await ctx.channel.history(limit=2).flatten())[1].content
         if not message:
@@ -51,7 +51,6 @@ class bullybot(commands.Cog):
                     output.append(message_input[let].upper())
             return ''.join(output)
         elif bully_skill < 16: #Big boy words
-            final_list = []
             return insult_list
         elif bully_skill < 20:
             pass
@@ -112,22 +111,22 @@ def big_letters(self):
         #finish the code block
         insult_out += ('```')
         return insult_out
-    # Dictionary to call large format letters
+
 def final(self):
-        final_list = []
-        for word in result.split(' '):
-            if len(word) <= 12:
-                final_list.append(word)
-            else:
-                pass
-        return random.choice(final_list)
+    final_list = []
+    for word in result.split(' '):
+        if len(word) <= 12:
+            final_list.append(word)
+        else:
+            pass
+    return random.choice(final_list)
 
         # insult_list is the random insult big letter generator
 insult_list = big_letters(final(final_list))
         
 # Ideas for bully modules
 # Replace spaces with the poop emojii and reverse word order in all caps (added for now)
-# Return insult in 5x5 * letters (sold on this) [priority 1]
+# Return insult in 5x5 * letters (sold on this) [priority 1] THIS WAS A STUPID IDEA
 # Return toilet made out of characters (maybe??)
 # Add .insult command with list of random insults called @user [priority 2]
 # 
