@@ -17,7 +17,7 @@ class hurtfulwords(commands.Cog):
         else:
             await type_message(
                 ctx.channel,
-                self.big_insults(random.choice(insult_out),
+                self.big_insults(),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
             )
