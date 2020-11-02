@@ -1,10 +1,6 @@
 import discord
 from redbot.core import commands
 from .pcx_lib import type_message
-import lxml.html
-import lxml
-import random
-import requests
 from insult_list import insult_out
 
 class hurtfulwords(commands.Cog):
