@@ -15,7 +15,7 @@ class hurtfulwords(commands.Cog):
         if not message:
             message = "I big dumb dumb who can't think of insults"
         else:
-            await type_message(
+            await (
                 ctx.channel,
                 self.big_insults(),
                 allowed_mentions=discord.AllowedMentions(
