@@ -88,7 +88,7 @@ class bullybot(commands.Cog):
         for i in range(len(letters['|'])):  
            for j in range(len(insult)):       
                 print(letters[insult[j]][i] + "   ",end = " ")
-          print()
+           print()
         #finish the code block
         print('```')
     
