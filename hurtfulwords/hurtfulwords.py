@@ -10,4 +10,12 @@ class hurtfulwords(commands.Cog):
     @commands.command(aliases=["i"])
     async def insult(self, ctx: commands.Context):
         #Define the command for RedBot
-        return insult_out
+        message = (await ctx.channel.history(limit=2).flatten())[1].content
+        if not message:
+            message = "I can't translate that!"
+        await type_message(
+            ctx.channel,
+            self.insult_out,
+            allowed_mentions=discord.AllowedMentions(
+                everyone=False, users=False, roles=False),
+        )
