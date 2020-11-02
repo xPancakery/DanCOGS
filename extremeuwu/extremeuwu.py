@@ -29,15 +29,15 @@ class extremeuwu(commands.Cog):
                 output += letter
             elif letter in vowels:
                 if letter == 'a':
-                    output += 'awa'
+                    output += 'AwA'
                 elif letter == 'e':
-                    output += 'ewe'
+                    output += 'EwE'
                 elif letter == 'i':
-                    output += 'iwi'
+                    output += 'IwI'
                 elif letter == 'o':
-                    output += 'owo'
+                    output += 'OwO'
                 elif letter == 'u':
-                    output += 'uwu'
+                    output += 'UwU'
                 elif letter == 'y':
-                    output += 'ywy'
+                    output += 'YwY'
         return output
