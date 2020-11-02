@@ -10,16 +10,4 @@ class hurtfulwords(commands.Cog):
     @commands.command(aliases=["i"])
     async def insult(self, ctx: commands.Context):
         #Define the command for RedBot
-        message = (await ctx.channel.history(limit=2).flatten())[1].content
-        if not message:
-            message = "I'm a dumb boy who can't think of insults"
-        await type_message(
-            ctx.channel,
-            self.big_insults(insult_out),
-            allowed_mentions=discord.AllowedMentions(
-                everyone=False, users=False, roles=False),
-        )
-        
-    
-    def big_insults(self, insult_out):
         return insult_out
