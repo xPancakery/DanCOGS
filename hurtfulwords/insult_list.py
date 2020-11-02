@@ -66,5 +66,4 @@ def final(self):
                 pass
         return random.choice(final_list)
         
-insult_out = big_letters(final(final_list))
-        # insult_list is the random insult big letter generator
+
