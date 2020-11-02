@@ -3,7 +3,7 @@ import discord
 import random
 from redbot.core import commands
 from .pcx_lib import type_message
-from .insult_list import insult_out, big_letters, final
+from .insult_list import insult_out, big_letters, final, final_list
 
 class hurtfulwords(commands.Cog):
     #Insult your friends
@@ -23,4 +23,4 @@ class hurtfulwords(commands.Cog):
             )
 
     def big_insults(x):
-        return insult_out
+        return big_letters(final(final_list))
