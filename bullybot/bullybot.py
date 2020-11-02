@@ -111,7 +111,7 @@ def big_letters(self):
         #finish the code block
         insult_out += ('```')
         return insult_out
-
+@staticmethod
 def final(self):
     final_list = []
     for word in result.split(' '):
