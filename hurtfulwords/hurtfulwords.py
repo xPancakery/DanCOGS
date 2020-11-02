@@ -24,4 +24,4 @@ class hurtfulwords(commands.Cog):
             
     def big_insults(ctx):
         # Pick and print insult from insult_list
-        return ("{} **IS A BIG**".format(ctx.message.author.mention) + big_letters(final(final_list))
+        return ("{} **IS A BIG**".format(ctx.message.author.mention)) + big_letters(final(final_list))
