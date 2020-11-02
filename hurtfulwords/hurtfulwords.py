@@ -7,7 +7,7 @@ class hurtfulwords(commands.Cog):
     #Insult your friends
 
     @commands.command(aliases=["i"])
-    async def hwords(self, ctx: commands.Context):
+    async def insult(self, ctx: commands.Context):
         #Define the command for RedBot
         message = (await ctx.channel.history(limit=2).flatten())[1].content
         if not message:
