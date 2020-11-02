@@ -2,7 +2,7 @@ import asyncio
 import discord
 from redbot.core import commands
 from .pcx_lib import type_message
-import insult_list
+from .insult_list import insult_out, big_letters, final
 
 class hurtfulwords(commands.Cog):
     #Insult your friends
