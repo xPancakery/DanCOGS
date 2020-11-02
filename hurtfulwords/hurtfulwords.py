@@ -1,3 +1,4 @@
+import asyncio
 import discord
 from redbot.core import commands
 from .pcx_lib import type_message
