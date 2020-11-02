@@ -1,3 +1,4 @@
+import asyncio
 import lxml
 import requests
 import lxml.html
