@@ -51,6 +51,7 @@ class bullybot(commands.Cog):
                     output.append(message_input[let].upper())
             return ''.join(output)
         elif bully_skill < 16: #Big boy words
+            final_list = []
             return insult_list
         elif bully_skill < 20:
             pass
