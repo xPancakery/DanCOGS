@@ -43,7 +43,7 @@ insults_list = doc.xpath('//html/body/ol/li/a/@href')
 insult_string = ''.join(insults_list)
 remove_html = 'http://www.insult.wiki/insult/'
 result = insult_string.replace(remove_html,' ')
-
+final_list = []
 def big_letters(self):
         # Embed the letters in code block for discord
         insult_out = ''
