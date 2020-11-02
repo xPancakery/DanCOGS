@@ -14,7 +14,7 @@ class hurtfulwords(commands.Cog):
             message = "I'm a dumb boy who can't think of insults"
         await type_message(
             ctx.channel,
-            self.big_insults,
+            self.big_insults(insult_out),
             allowed_mentions=discord.AllowedMentions(
                 everyone=False, users=False, roles=False),
         )
