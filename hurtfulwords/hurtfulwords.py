@@ -1,5 +1,6 @@
 import asyncio
 import discord
+import random
 from redbot.core import commands
 from .pcx_lib import type_message
 from .insult_list import insult_out, big_letters, final
@@ -16,7 +17,7 @@ class hurtfulwords(commands.Cog):
         else:
             await type_message(
                 ctx.channel,
-                self.big_insults(),
+                self.big_insults(random.choice(insult_out),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
             )
