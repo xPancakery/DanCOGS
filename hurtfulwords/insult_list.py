@@ -74,3 +74,4 @@ def final(self):
                 pass
         # Pick random insult from final list of insults with <= 12 characters
         return random.choice(final_list)
+    
