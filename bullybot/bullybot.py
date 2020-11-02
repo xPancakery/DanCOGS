@@ -16,7 +16,7 @@ class bullybot(commands.Cog):
     #The premiere method of bullying your friends over discord. With a ROBOT. How absurd.
 
     @commands.command(aliases=["b"])
-    async def bully(self, ctx: commands.Context):
+    async def bullyy(self, ctx: commands.Context):
         #Define the command for RedBot
         message = (await ctx.channel.history(limit=2).flatten())[1].content
         if not message:
