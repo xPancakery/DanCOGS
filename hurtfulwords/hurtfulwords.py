@@ -15,12 +15,13 @@ class hurtfulwords(commands.Cog):
         if not message:
             message = "I big dumb dumb who can't think of insults"
         else:
-            await
+            await type_message(
                 ctx.channel,
                 self.big_insults(),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
+            )
             
-
     def big_insults(x):
+        # Pick and print insult from insult_list
         return big_letters(final(final_list))
