@@ -57,7 +57,39 @@ class bullybot(commands.Cog):
         else:
             pass
     
-    # Load list of insults to throw in your friends faces
+    letters = {         
+    'a':['  *  ',' * * ','*****','*   *','*   *'],
+    'b':['**** ','*   *','*****','*   *','**** '],
+    'c':[' ****','*    ','*    ','*    ',' ****'],
+    'd':['**** ','*   *','*   *','*   *','**** '],
+    'e':['*****','*    ','*****','*    ','*****'],
+    'f':['*****','*    ','*****','*    ','*    '],
+    'g':['*****','*    ','* ***','*   *','*****'],
+    'h':['*   *','*   *','*****','*   *','*   *'],
+    'i':['*****','  *  ','  *  ','  *  ','*****'],
+    'j':['***  ','  *  ','  *  ','  *  ','***  '],
+    'k':['*   *','* *  ','*    ','* *  ','*   *'],
+    'l':['*    ','*    ','*    ','*    ','*****'],
+    'm':['*   *','** **','* * *','*   *','*   *'],
+    'n':['*   *','**  *','* * *','*  **','*   *'],
+    'o':[' *** ','*   *','*   *','*   *',' *** '],
+    'p':['**** ','*   *','**** ','*    ','*    '],
+    'q':[' *** ','*   *','* * *','*  * ',' ** *'],
+    'r':['**** ','*   *','**** ','* *  ','*  **'],
+    's':[' ****','*    ',' *** ','    *','**** '],
+    't':['*****','  *  ','  *  ','  *  ','  *  '],
+    'u':['*   *','*   *','*   *','*   *',' *** '],
+    'v':['*   *','*   *',' * * ',' * * ','  *  '],
+    'w':['*   *','*   *','* * *','* * *',' * * '],
+    'x':['*   *',' * * ','  *  ',' * * ','*   *'],
+    'y':['*   *',' * * ','  *  ','  *  ','  *  '],
+    'z':['*****','   * ','  *  ',' *   ','*****'],
+    ',':['     ','     ','   **','   **','  *  '],
+    ':':['     ','  *  ','     ','  *  ','     '],
+    '|':['*****','*****','*****','*****','*****'],
+    ' ':['','','','','']
+    }
+
     html = requests.get('http://www.insult.wiki/list-of-insults')
     doc = lxml.html.fromstring(html.content)
     insults_list = doc.xpath('//html/body/ol/li/a/@href')
@@ -65,7 +97,20 @@ class bullybot(commands.Cog):
     remove_html = 'http://www.insult.wiki/insult/'
     result = insult_string.replace(remove_html,' ')
 
-    # Turn list into string to pass into big_letters
+        # Large letter command
+
+    def big_letters(insult):
+            # Embed the letters in code block for discord
+        print('```py')
+            # Print large format letters horizontally
+        for i in range(len(letters['|'])):  
+            for j in range(len(insult)):       
+                print(letters[insult[j]][i] + "   ",end = " ")
+            print()
+            #finish the code block
+        print('```')
+        
+        # Dictionary to call large format letters
     def final(x):
         final_list = []
         for word in result.split(' '):
@@ -75,56 +120,8 @@ class bullybot(commands.Cog):
                 pass
         return random.choice(final_list)
 
-    # insult_list is the random insult big letter generator
+        # insult_list is the random insult big letter generator
     insult_list = big_letters(final(final_list))
-
-
-
-    # Large letter command
-    def big_letters(insult):
-        # Embed the letters in code block for discord
-        print('```py')
-        # Print large format letters horizontally
-        for i in range(len(letters['|'])):
-            for j in range(len(insult)):       
-                print(letters[insult[j]][i] + "   ",end = " ")
-            print()
-        #finish the code block
-        print('```')
-    
-    # Dictionary to call large format letters
-    letters = {         
-        'a':['  *  ',' * * ','*****','*   *','*   *'],
-        'b':['**** ','*   *','*****','*   *','**** '],
-        'c':[' ****','*    ','*    ','*    ',' ****'],
-        'd':['**** ','*   *','*   *','*   *','**** '],
-        'e':['*****','*    ','*****','*    ','*****'],
-        'f':['*****','*    ','*****','*    ','*    '],
-        'g':['*****','*    ','* ***','*   *','*****'],
-        'h':['*   *','*   *','*****','*   *','*   *'],
-        'i':['*****','  *  ','  *  ','  *  ','*****'],
-        'j':['***  ','  *  ','  *  ','  *  ','***  '],
-        'k':['*   *','* *  ','*    ','* *  ','*   *'],
-        'l':['*    ','*    ','*    ','*    ','*****'],
-        'm':['*   *','** **','* * *','*   *','*   *'],
-        'n':['*   *','**  *','* * *','*  **','*   *'],
-        'o':[' *** ','*   *','*   *','*   *',' *** '],
-        'p':['**** ','*   *','**** ','*    ','*    '],
-        'q':[' *** ','*   *','* * *','*  * ',' ** *'],
-        'r':['**** ','*   *','**** ','* *  ','*  **'],
-        's':[' ****','*    ',' *** ','    *','**** '],
-        't':['*****','  *  ','  *  ','  *  ','  *  '],
-        'u':['*   *','*   *','*   *','*   *',' *** '],
-        'v':['*   *','*   *',' * * ',' * * ','  *  '],
-        'w':['*   *','*   *','* * *','* * *',' * * '],
-        'x':['*   *',' * * ','  *  ',' * * ','*   *'],
-        'y':['*   *',' * * ','  *  ','  *  ','  *  '],
-        'z':['*****','   * ','  *  ',' *   ','*****'],
-        ',':['     ','     ','   **','   **','  *  '],
-        ':':['     ','  *  ','     ','  *  ','     '],
-        '|':['*****','*****','*****','*****','*****'],
-        ' ':['','','','','']
-        }
         
 # Ideas for bully modules
 # Replace spaces with the poop emojii and reverse word order in all caps (added for now)
