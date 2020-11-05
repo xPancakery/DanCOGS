@@ -23,7 +23,7 @@ class extremeuwu(commands.Cog):
     @staticmethod
     def exuwu(message_input):
         output = ''
-        vowels = '[a,e,i,o,u]'
+        vowels = '[a,e,i,o,u,y]'
         for letter in message_input.lower():
             if letter not in vowels:
                 output += letter
