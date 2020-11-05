@@ -1,6 +1,4 @@
-import asyncio
 import discord
-import random
 from redbot.core import commands
 from .pcx_lib import type_message
 from .insult_list import big_letters, final, final_list
@@ -9,7 +7,7 @@ class hurtfulwords(commands.Cog):
     #Insult your friends
 
     @commands.command(aliases=["i"])
-    async def insult(self, ctx: commands.Context):
+    async def insult(self, ctx: commands.Context, User_Mention):
         #Define the command for RedBot
         message = (await ctx.channel.history(limit=2).flatten())[1].content
         if not message:
@@ -17,11 +15,16 @@ class hurtfulwords(commands.Cog):
         else:
             await type_message(
                 ctx.channel,
-                self.big_insults(ctx),
+                self.big_insults(ctx, User_Mention),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
             )
             
-    def big_insults(self, ctx):
+    def big_insults(self, ctx, User_Mention):
         # Pick and print insult from insult_list
-        return ("**YOU ARE A BIG**") + big_letters(final(final_list))
+        if '@' in User_Mention:
+            return ("**{} IS A BIG**".format(User_Mention)
+                ) + big_letters(final(final_list))
+        else:
+            return ("**{} DOESN'T KNOW HOW TO MENTION PEOPLE AND IS A BIG**".format(
+                ctx.message.author.mention)) + big_letters(final(final_list))
