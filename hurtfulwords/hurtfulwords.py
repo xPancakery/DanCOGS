@@ -26,5 +26,4 @@ class hurtfulwords(commands.Cog):
             return ("**{} IS A BIG**".format(User_Mention)
                 ) + big_letters(final(final_list))
         else:
-            return ("**{} DOESN'T KNOW HOW TO MENTION PEOPLE AND IS A BIG**".format(
-                ctx.message.author.mention)) + big_letters(final(final_list))
+            return ("**Mention a User to insult them!**")
