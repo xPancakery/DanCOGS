@@ -1,4 +1,3 @@
-import asyncio
 # Import HTML scraping tools to pull insults
 import lxml
 import requests
