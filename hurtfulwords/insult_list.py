@@ -40,11 +40,11 @@ letters = {
     }
 
 # HTML scrape to pull insults from insult.wiki
-html = requests.get('http://www.insult.wiki/list-of-insults')
+html = requests.get('https://www.insult.wiki/list-of-insults')
 doc = lxml.html.fromstring(html.content)
 insults_list = doc.xpath('//html/body/ol/li/a/@href')
 insult_string = ''.join(insults_list)
-remove_html = 'http://www.insult.wiki/insult/'
+remove_html = 'https://www.insult.wiki/insult/'
 result = insult_string.replace(remove_html,' ')
 final_list = []
 
