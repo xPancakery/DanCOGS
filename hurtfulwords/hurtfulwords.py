@@ -5,7 +5,7 @@ from .insult_list import big_letters, final, final_list
 
 class hurtfulwords(commands.Cog):
     #Insult your friends
-
+    final_list = final_list
     @commands.command(aliases=["i"])
     async def insult(self, ctx: commands.Context, User_Mention):
         #Define the command for RedBot
@@ -22,7 +22,6 @@ class hurtfulwords(commands.Cog):
             
     def big_insults(self, ctx, User_Mention):
         # Pick and print insult from insult_list
-        self.final_list
         if '@' in User_Mention:
             return (f"**{User_Mention} IS A BIG**") + big_letters(final(final_list))
         else:
