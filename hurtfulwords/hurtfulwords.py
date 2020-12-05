@@ -5,7 +5,6 @@ from .insult_list import big_letters, final, final_list
 
 class hurtfulwords(commands.Cog):
     #Insult your friends
-    final_list = final_list
     @commands.command(aliases=["i"])
     async def insult(self, ctx: commands.Context, User_Mention):
         #Define the command for RedBot
