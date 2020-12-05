@@ -22,6 +22,7 @@ class hurtfulwords(commands.Cog):
             
     def big_insults(self, ctx, User_Mention):
         # Pick and print insult from insult_list
+        final_list = final_list
         if '@' in User_Mention:
             return (f"**{User_Mention} IS A BIG**") + big_letters(final(final_list))
         else:
