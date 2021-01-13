@@ -3,7 +3,7 @@ import discord
 from redbot.core import commands
 
 
-class magic8ball(commands.Cog):
+class magic_ball(commands.Cog):
 
     @commands.command()
     async def magic_ball(self, ctx: commands.Context, question):
