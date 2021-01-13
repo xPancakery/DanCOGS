@@ -1,6 +1,6 @@
 import random
 import discord
-from .pcx_lib import message, type_message
+from .pcx_lib import type_message
 from redbot.core import commands
 
 
