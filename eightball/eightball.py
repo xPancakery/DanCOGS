@@ -27,7 +27,8 @@ class magic_ball(commands.Cog):
         'My sources say no.','Outlook not so good.','Outlook good.','Reply hazy, try again.','Signs point to yes.',
         'Very doubtful','Without a doubt.','Yes.','Yes - definitely.','You may rely on it.']
         if '?' in question[-1:]:
-            return(random.choice(choices))
+            answer = random.choice(choices)
+            return(answer)
         else:
             return("Ask a question to the Magic 8 Ball.")
         
