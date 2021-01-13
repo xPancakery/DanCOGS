@@ -7,20 +7,20 @@ from redbot.core import commands
 class magic_ball(commands.Cog):
 
     @commands.command(aliases=["8ball"])
-    async def magic_ball(self, ctx: commands.Context, question):
+    async def magic_ball(self, ctx: commands.Context, *question):
         message = (await ctx.channel.history(limit=2).flatten())
         if not message:
             message = "You must ask a question to the Magic 8 Ball."
         else:
             await type_message(
                 ctx.channel,
-                self.qna(question),
+                self.qna(*question),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
             )
         
 
-    def qna(self, question):
+    def qna(self, *question):
         answer = ''
         choices = ['As I see it, yes.','Ask again later.','Better not tell you now.','Cannot predict now.','Concentrate and ask again.',
         "Don't count on it.",'It is certain.','It is decidedly so.','Most likely','My reply is no.',
