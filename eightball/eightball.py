@@ -14,13 +14,13 @@ class magic_ball(commands.Cog):
         else:
             await type_message(
                 ctx.channel,
-                self.qna(ctx, question),
+                self.qna(question),
                 allowed_mentions=discord.AllowedMentions(
                     everyone=False, users=False, roles=False),
             )
         
 
-    def qna(self, ctx, question):
+    def qna(self, question):
         answer = ''
         choices = ['As I see it, yes.','Ask again later.','Better not tell you now.','Cannot predict now.','Concentrate and ask again.',
         "Don't count on it.",'It is certain.','It is decidedly so.','Most likely','My reply is no.',
