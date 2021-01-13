@@ -6,7 +6,7 @@ from redbot.core import commands
 
 class magic_ball(commands.Cog):
 
-    @commands.command()
+    @commands.command(aliases=['8ball'])
     async def magic_ball(self, ctx: commands.Context, question):
         message = (await ctx.channel.history(limit=2).flatten())[1].content
         if not message:
