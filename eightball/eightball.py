@@ -7,10 +7,10 @@ from redbot.core import commands
 class magic_ball(commands.Cog):
 
     @commands.command(aliases=["8ball"])
-    async def magic_ball(self, ctx: commands.Context, *question):
+    async def magic_ball(self, ctx: commands.Context, question):
         message = (await ctx.channel.history(limit=2).flatten())
         if not message:
-            message = "You must ask a question to the Magic 8 Ball."
+            message = 'You must ask a question to the Magic 8 Ball. Example: .8ball"Is this a question?"'
         else:
             await type_message(
                 ctx.channel,
@@ -29,6 +29,6 @@ class magic_ball(commands.Cog):
         if '?' in question:
             answer = random.choice(choices)
             return(answer)
-        else:
-            return("Ask a question to the Magic 8 Ball.")
+#        else:
+#            return("Ask a question to the Magic 8 Ball.")
         
